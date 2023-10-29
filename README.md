@@ -223,42 +223,52 @@ Follow these steps for successful implementation:
 
   **<details markdown=1><summary markdown="span">click for details</summary>**
 
-  This docker-compose.yml configuration defines a set of services and their configurations for running a monitoring stack, including Prometheus, Grafana, and a Node.js application. Here's a breakdown of the configuration:
+  This Ansible playbook is designed to deploy Docker containers for Prometheus, Grafana, and a Node.js application. It creates Docker networks, volumes, and starts the containers accordingly.
 
-   1. **Version:** This Docker Compose file is written in version 2.1 format.
+   Here's a breakdown of the playbook:
    
-   2. **Networks:**
-      - `my-network`: This defines a custom Docker network named "my-network" with the "bridge" driver. This network will be used to connect the containers.
+   1. **Docker Network Creation**
+   - Creates a Docker network named `my-network` using the `docker_network` module.
+     
+   2. **Docker Volume Creation**
+   - Creates Docker volumes for Prometheus and Grafana data separately using the `docker_volume` module.
    
-   3. **Volumes:**
-      - `prometheus_data`: A named volume used for persisting Prometheus data.
-      - `grafana_data`: A named volume used for persisting Grafana data.
+   3. **Start Prometheus Container**
+   - Starts a Prometheus container with the following configurations:
+     - **Name**: `prometheus`
+     - **Image**: `prom/prometheus:v2.20.1`
+     - **Volumes**:
+       - Binds `prometheus.yml` from the current directory to `/etc/prometheus/prometheus.yml` inside the container.
+       - Uses the `prometheus_data` volume for persistent data storage.
+     - **Ports**: Forwards port `9090` on the host to port `9090` in the container.
+     - **Exposed Port**: Makes port `9090` accessible to other containers.
+     - **Network**: Connects the container to the `my-network` network.
    
-   4. **Services:**
+   4. **Start Grafana Container**
+   - Starts a Grafana container with the following configurations:
+     - **Name**: `grafana`
+     - **Image**: `grafana/grafana:7.1.5`
+     - **Volumes**:
+       - Binds `datasources.yml` from the current directory to `/etc/grafana/provisioning/datasources/datasources.yml` inside the container.
+       - Uses the `grafana_data` volume for persistent data storage.
+     - **Environment Variables**:
+       - Configures Grafana settings for authentication.
+     - **Ports**: Forwards port `3001` on the host to port `3000` in the container.
+     - **Exposed Port**: Makes port `3000` accessible to other containers.
+     - **Network**: Connects the container to the `my-network` network.
    
-      a. **Prometheus:**
-         - `image`: Specifies the Docker image for Prometheus with version 2.20.1.
-         - `container_name`: The name of the Prometheus container is "prometheus."
-         - `volumes`: Mounts a configuration file `prometheus.yml` from the host to the container and uses the `prometheus_data` volume for data persistence.
-         - `ports`: Maps port 9090 from the host to port 9090 in the Prometheus container.
-         - `expose`: Exposes port 9090.
-         - `networks`: Connects to the "my-network" custom Docker network.
+   5. **Build Node.js Application Image**
+   - Builds a Docker image named `myapp` for a Node.js application using the `docker_image` module. It uses the Dockerfile located in the `./codebase_partner` directory.
    
-      b. **Grafana:**
-         - `image`: Specifies the Docker image for Grafana with version 7.1.5.
-         - `container_name`: The name of the Grafana container is "grafana."
-         - `volumes`: Mounts data source configuration (`datasources.yml`) from the host to the container and uses the `grafana_data` volume for data persistence.
-         - `environment`: Sets some environment variables to configure Grafana for anonymous access to simplify the process of testing. Not for Production.
-         - `ports`: Maps port 3001 from the host to port 3000 in the Grafana container.
-         - `expose`: Exposes port 3000.
-         - `networks`: Connects to the "my-network" custom Docker network.
+   6. **Start Node.js Application Container**
+   - Starts a container for the Node.js application using the `myapp` image previously built:
+     - **Name**: `myapp`
+     - **Image**: `myapp`
+     - **Ports**: Forwards port `3000` on the host to port `3000` in the container.
+     - **Exposed Port**: Makes port `3000` accessible to other containers.
+     - **Network**: Connects the container to the `my-network` network.
    
-      c. **node-application-monitoring-app:**
-         - `build`: Builds the container from the specified context (Dockerfile) in `/web_app_files/containers/node_app/codebase_partner`.
-         - `container_name`: The name of the Node.js application container is "myapp."
-         - `ports`: Maps port 3000 from the host to port 3000 in the Node.js application container.
-         - `expose`: Exposes port 3000.
-         - `networks`: Connects to the "my-network" custom Docker network.
+   Please ensure that the necessary files (`prometheus.yml`, `datasources.yml`, and `Dockerfile`) exist in the correct locations and contain the required configurations for this setup to work properly. Also, ensure Docker is installed and running on the target machine where this playbook is executed.
 
   </details>
 
