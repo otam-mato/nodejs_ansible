@@ -217,9 +217,9 @@ Follow these steps for successful implementation:
 
   It will be pulled into the Grafana container during its creation using Docker-compose.
 
-### 4. Create the Docker-compose file "docker-compose.yml"
+### 4. Create the Ansible playbook "ansible-deploy-containers.yml"
 
-- [**docker-compose.yml**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/blob/f06c6ef58271b952bb7111037458213b551b5107/docker-compose.yml)
+- [**ansible-deploy-containers.yml**](https://github.com/otam-mato/nodejs_ansible/blob/86631bd672ee8045966b51c6326a03fe6e9ca3fa/ansible-deploy-containers.yml)
 
   **<details markdown=1><summary markdown="span">click for details</summary>**
 
@@ -262,13 +262,13 @@ Follow these steps for successful implementation:
 
   </details>
 
-### 5. Run all containers with the "docker-compose.yml" file
+### 5. Run the "ansible-deploy-containers.yml" file
 
 ```
-docker-compose up -d  
+ansible-playbook ansible-deploy-containers.yml 
 ```
 
 
-<img src="https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/assets/113034133/68aa28ad-e7ea-4311-b07b-4ed61989627d" width="700px"/>
+<img src="https://github.com/otam-mato/nodejs_ansible/assets/113034133/9918631b-85c5-44cb-8bac-e91eb8d685cc" width="700px"/>
 
 
