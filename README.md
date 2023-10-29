@@ -8,7 +8,7 @@
 >
 > In the current installment, I am setting up monitoring of the app with Prometheus and Grafana.
 >
-> This time, using Ansible.
+> This time, using **Ansible**.
 <br>
 
 ## Deployment Strategy
