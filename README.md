@@ -17,7 +17,7 @@
    We will use the Ansibe and pull images of Prometheus and Grafana from DockerHub
    
 2. **Node.js:**
-   We include the step in Ansible playbook to build the app container image from a Docker file
+   We include the task in Ansible playbook to build the app container image from a Docker file
 
 <br>
 
