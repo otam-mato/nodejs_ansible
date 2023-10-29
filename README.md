@@ -262,7 +262,7 @@ Follow these steps for successful implementation:
 
   </details>
 
-### 5. Run the "ansible-deploy-containers.yml" file
+### 5. Run the Ansible playbook "ansible-deploy-containers.yml" file
 
 ```
 ansible-playbook ansible-deploy-containers.yml 
