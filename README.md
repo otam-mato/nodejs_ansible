@@ -196,9 +196,9 @@ Follow these steps for successful implementation:
 
 1. [**Modify the app files to allow Prometheus collecting metrics.**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/blob/main/README.md#1-modify-the-app-files-to-allow-prometheus-collecting-metrics)
 2. [**Create the configuration file for Prometheus"prometheus.yml".**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/blob/main/README.md#2-create-the-configuration-file-for-prometheusprometheusyml)
-4. [**Create the configuration file for Grafana "datasources.yml"**](https://github.com/otam-mato/nodejs_elk/blob/main/README.md#3-launch-the-elk-stack-with-this-docker-compose-file)
+4. [**Create the configuration file for Grafana "datasources.yml."**](https://github.com/otam-mato/nodejs_elk/blob/main/README.md#3-launch-the-elk-stack-with-this-docker-compose-file)
 5. [**Create the Ansible playbook "ansible-deploy-containers.yml".**](https://github.com/otam-mato/nodejs_ansible/blob/main/README.md#4-create-the-ansible-playbook-ansible-deploy-containersyml)
-7. [**Run the Ansible playbook "ansible-deploy-containers.yml" file**](https://github.com/otam-mato/nodejs_ansible/blob/main/README.md#5-run-the-ansible-playbook-ansible-deploy-containersyml-file)
+7. [**Run the Ansible playbook "ansible-deploy-containers.yml" file.**](https://github.com/otam-mato/nodejs_ansible/blob/main/README.md#5-run-the-ansible-playbook-ansible-deploy-containersyml-file)
 
 <br>
 
