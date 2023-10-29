@@ -24,10 +24,11 @@
 ## Architecture Diagram
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/assets/113034133/ec57c7b7-187f-410c-8edf-63d7e7a8314f" width="800px"/>
+  <img src="https://github.com/otam-mato/nodejs_ansible/assets/113034133/8564190f-a104-477c-8dc5-89ad7e035c4f" width="800px"/>
 </p>
 
 <br>
+
 
 ## Technologies used
 - **Prometheus**
