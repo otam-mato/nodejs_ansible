@@ -231,7 +231,7 @@ Follow these steps for successful implementation:
 
 ### 1. Modify the app files to allow Prometheus collecting metrics
 
-- [**package.json**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/blob/866dee2b330e8239ab165b10f92b61bf58f6541d/web_app_files/containers/node_app/codebase_partner/package.json)
+- [**package.json**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana_ansible/blob/1b3fbeafdfc4e3d4ec0eb21333c172a62d20247d/web_app_files/containers/node_app/codebase_partner/package.json)
 
   **<details markdown=1><summary markdown="span">click for details</summary>**
 
@@ -239,7 +239,7 @@ Follow these steps for successful implementation:
 
   </details>
   
-- [**index.js**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/blob/6f36f04501a92b84988d206124f7ba26b60b30ff/web_app_files/containers/node_app/codebase_partner/index.js)
+- [**index.js**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana_ansible/blob/1b3fbeafdfc4e3d4ec0eb21333c172a62d20247d/web_app_files/containers/node_app/codebase_partner/index.js)
 
   **<details markdown=1><summary markdown="span">click for details</summary>**
 
@@ -249,13 +249,13 @@ Follow these steps for successful implementation:
 
 ### 2. Create the configuration file for Prometheus"prometheus.yml". 
 
-- [**prometheus.yml**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/blob/1df4e59c05cee1305ac899b2aa6eca354ea1ac5d/web_app_files/containers/node_app/prometheus/prometheus.yml)
+- [**prometheus.yml**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana_ansible/blob/1b3fbeafdfc4e3d4ec0eb21333c172a62d20247d/web_app_files/containers/node_app/prometheus/prometheus.yml)
 
   It will be pulled into the Prometheus container during its creation using Docker-compose.
   
 ### 3. Create the configuration file for Grafana "datasources.yml". 
 
-- [**datasources.yml**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana/blob/main/README.md#3-create-the-configuration-file-for-grafana-datasourcesyml)
+- [**datasources.yml**](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana_ansible/blob/1b3fbeafdfc4e3d4ec0eb21333c172a62d20247d/web_app_files/containers/node_app/grafana/datasources.yml)
 
   It will be pulled into the Grafana container during its creation using Docker-compose.
 
