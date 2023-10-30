@@ -8,7 +8,9 @@
 >
 > In the current installment, I am setting up monitoring of the app with Prometheus and Grafana.
 >
-> This time, using **Ansible**.
+> Previously I set up the stack with Docker-compose at this [GitHub Repository](https://github.com/otam-mato/nodejs_mysql_web_app_terraform.git).
+>
+> This time, I am using **Ansible**.
 <br>
 
 ## Deployment Strategy
