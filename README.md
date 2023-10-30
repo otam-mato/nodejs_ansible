@@ -26,7 +26,7 @@
 ## Architecture Diagram
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana_ansible/assets/113034133/dd7dac74-dbbb-4eda-9483-1e98606c961a" width="800px"/>
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana_ansible/assets/113034133/052ceeb8-cdef-4d83-8f84-e645374472a3" width="800px"/>
 </p>
 
 <br>
