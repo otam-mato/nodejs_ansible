@@ -8,7 +8,7 @@
 >
 > In the current installment, I am setting up monitoring of the app with Prometheus and Grafana.
 >
-> Previous experiment with Docker-compose available at this [GitHub Repository](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana.git).
+> Previous deployment with Docker-compose available at this [GitHub Repository](https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana.git).
 >
 > This time, I am using **Ansible**.
 <br>
